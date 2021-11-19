@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+.main_button{
+    background-color: white;
+    margin: 1rem;
+    width: 5.5rem;
+    height: 2.2rem;
+    border-radius: 1.2rem;
+    border: 1px solid red;
+    display: flex;
+}
+.inner_button{
+    background-color: yellow;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+}

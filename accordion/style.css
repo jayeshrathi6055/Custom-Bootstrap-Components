@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+.main_accordion{
+    padding-top: 1rem;
+    width: 100vw;
+    margin: auto;
+    max-width: 100vw;
+}
+.inner_accordion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 2rem;
+    border: 1px solid #86b7fe;
+    width: 95%;
+    margin: auto;
+    cursor: pointer;
+    border-top-left-radius:0.8rem ;
+    border-top-right-radius:0.8rem ;
+    background-color: white;
+    color: #0c63e4;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+.inner_accordion i{
+    font-size: 2.5rem;
+}
+.accordion_para{
+    font-size: 1.6rem;
+    width: 95%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 1rem;
+    border-top: none;
+    display: none;
+}

@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+.main_slider{
+    width: 95vw;
+    height: 80vh;
+    border: 1px solid black;
+    margin: 1rem auto;
+    position: relative;
+}
+.slider_images{
+    width: 100%;
+    height: 100%;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.slider_content{
+    position: absolute;
+    top: 72%;
+    left: 40%;
+    right: 35%;
+    font-size: 1.6rem;
+    text-align: center;
+    display: none;
+}
+.slider_content h3{
+    font-size: 2.5rem;
+}
+
+.left_angle, .right_angle{
+    position: absolute;
+    top: 50%;
+    font-size: 3.5rem;
+    cursor: pointer;
+}
+.right_angle{
+right: 5%;
+}
+.left_angle{
+    left: 5%;
+}
+.left_angle:hover, .right_angle:hover{
+    color: grey;
+}
+
