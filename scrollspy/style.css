@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+.main_scroll{
+    display: flex;
+    font-size: 2rem;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.scrollable_content{
+    width: 20%;
+    /* border: 1px solid black; */
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    margin-right: 1rem;
+}
+.scrollable_content ul{
+    border: 2px solid blue;
+    border-bottom: none;
+    border-top-left-radius:0.5rem ;
+    border-top-right-radius:0.5rem ;
+}
+.scrollable_content ul li{
+    list-style: none;
+    border-bottom: 2px solid blue;
+    cursor: pointer;
+}
+.scrollable_content li:hover{
+    background-color: rgb(243, 236, 222);
+}
+.scrollable_content ul li a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    display: block;
+    padding: 1rem;
+}
+.scrollable_content ul li a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+.content{
+    width: 80%;
+    /* border: 1px solid black; */
+    padding: 2rem 1rem;
+    overflow-y: auto;
+}
+.item h2{
+    margin-bottom: 1rem;
+}
+.item p{
+    margin-bottom: 1rem;
+}
+
+/* .item:target{
+    background-color: rgb(222, 221, 255);
+} */
+/* .scrollable_content ul:target{
+    color: white;
+    background-color: blue;
+} */
+/* .scrollable_content ul li a:focus{
+    color: white;
+    background-color: blue; */
+/* } */

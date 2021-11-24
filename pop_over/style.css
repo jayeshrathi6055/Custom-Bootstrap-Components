@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* For Bottom */
+.pop_bottom {
+  margin: 1rem;
+  display: inline-block;
+  position: relative;
+}
+.pop_bottom:hover:before {
+  content: "";
+  position: absolute;
+  background-color: grey;
+  width: 2rem;
+  height: 1.3rem;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  bottom: 50.9%;
+  left: 41%;
+}
+.pop_bottom:hover:after {
+    content: "";
+  position: absolute;
+  background-color: white;
+  width: 1.4rem;
+  height: 1rem;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  bottom: 50.9%;
+  left: 42.8%;
+}
+.pop_bottom button {
+  padding: 0.6rem;
+  font-size: 1.5rem;
+}
+.pop_content {
+  padding: 1rem;
+  border: 1px solid grey;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  margin: 1rem;
+  display: none;
+}
+
+
+/* For Right */
+.pop_right {
+    margin: 1rem;
+    display: inline-block;
+    position: relative;
+    transition: all 1s;
+  }
+  .pop_right:hover:before {
+    content: "";
+    position: absolute;
+    background-color: grey;
+    width: 2rem;
+    height: 1.3rem;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    bottom: 38.9%;
+    left: 46%;
+    transform: rotate(-90deg);
+  }
+  .pop_right:hover:after {
+      content: "";
+    position: absolute;
+    background-color: white;
+    width: 1.4rem;
+    height: 1rem;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    bottom: 41%;
+    left: 47.5%;
+    transform: rotate(-90deg);
+  }
+  .pop_right button {
+    padding: 0.6rem;
+    font-size: 1.5rem;
+}
+.pop_content {
+    padding: 1rem;
+    border: 1px solid grey;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    margin: 1rem;
+    display: none;
+  }
