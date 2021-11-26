@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+
+      .toast_button {
+        margin: 1rem;
+        padding: 1rem;
+        cursor: pointer;
+      }
+
+      .main_toast {
+        border: 1px solid black;
+        border-radius: 0.6rem;
+        font-size: 2rem;
+        position: absolute;
+        right: 2%;
+        bottom: 2%;
+        width: 35rem;
+        visibility: hidden;
+      }
+      .toast_header {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid blue;
+      }
+      .toast_title {
+        display: flex;
+        align-items: center;
+      }
+      .toast_title span {
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.6rem;
+        background-color: blue;
+        margin-right: 1rem;
+      }
+      .toast_time {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .toast_time i {
+        margin-left: 1rem;
+      }
+      .toast_time i:hover {
+        color: grey;
+        cursor: pointer;
+      }
+
+      .toast_message {
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toast_button" onClick = "showToast('toast1')">Show live toast</button>
+
+    <div class="main_toast" id="toast1">
+      <div class="toast_header">
+        <div class="toast_title">
+          <span></span>
+          <p><strong>Jayesh</strong></p>
+        </div>
+        <div class="toast_time">
+          <p><span>10</span> mins ago</p>
+          <i class="fas fa-times" onClick = "closeToast('toast1')"></i>
+        </div>
+      </div>
+      <div class="toast_message">Hello World, this is a toast message.</div>
+    </div>
+
+
+    <script>
+      let toast;
+function showToast(toastId){
+    let id = document.getElementById(toastId);
+    id.style.visibility = "visible"
+    toast = setTimeout(()=>{
+        closeToast(toastId)
+    },8000)
+}
+function closeToast(toastId){
+    let id = document.getElementById(toastId);
+    id.style.visibility = "hidden"
+    clearTimeout(toast)
+}
+    </script>
+  </body>
+</html>
