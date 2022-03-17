@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open menu</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      .main_menu {
+        border: 2px solid red;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 1rem;
+        flex-wrap: wrap;
+      }
+      .inner_menu {
+        font-size: 2rem;
+        padding: 1rem;
+        margin: 1rem;
+        position: relative;
+        cursor: pointer;
+        border-radius: 0.8rem;
+      }
+      .inner_menu figure {
+        padding: 0.5rem;
+        background-color: yellow;
+        margin: 0.8rem;
+        border-radius: 0.8rem;
+      }
+      .inner_menu figure img {
+        width: 12rem;
+        border-radius: 50%;
+      }
+      .inner_menu:hover {
+        background-color: orange;
+      }
+      .inner_menu i {
+        position: absolute;
+        top: 0;
+        right: 0.5rem;
+        color: white;
+      }
+      .add_menu {
+        border-radius: 0.8rem;
+        width: 16.6rem;
+        height: 14.8rem;
+        border: 2px solid blue;
+        display: grid;
+        place-items: center;
+        font-size: 13rem;
+        cursor: pointer;
+        margin: 1rem;
+      }
+      .inner_menu p {
+        width: 10rem;
+        height: 2.3rem;
+        margin: auto;
+        text-align: center;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .menu_options {
+        position: absolute;
+        background-color: black;
+        color: white;
+        list-style-type: none;
+        width: 26rem;
+        border-radius: 0.8rem;
+        top: 20px;
+        left: 155px;
+        visibility: hidden;
+        z-index: 1000;
+      }
+      .menu_options li {
+        padding: 0.2rem 0rem 0.2rem 1.5rem;
+      }
+      .menu_options li:hover {
+        background-color: rgb(202, 200, 200);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_menu" id="main_menu">
+      <div class="add_menu" id="add_menu">+</div>
+    </div>
+
+    <script>
+      let add_menu = document.getElementById("add_menu");
+      let main_menu = document.getElementById("main_menu");
+      let last_child = main_menu.lastElementChild;
+      add_menu.addEventListener("click", () => {
+        let name = prompt("Enter name of the website - ");
+        let add = `
+            <figure>
+                <img src="image1.webp" alt="No image">
+            </figure>
+            <p>${name}</p>
+            <i class="fas fa-ellipsis-h menu" onClick = "allMenu(event)"></i>
+            <ul class="menu_options" id="menu_options">
+          <li style="margin-top: 1rem">Pin</li>
+          <li>Edit</li>
+          <hr style="margin: 1rem 0rem" />
+          <li>Open in new Window</li>
+          <li>Open in new private window</li>
+          <hr style="margin: 1rem 0rem" />
+          <li style="margin-bottom: 1rem">Dismiss</li>
+        </ul>
+        `;
+        let n = document.createElement("div");
+        n.className = "inner_menu";
+        n.innerHTML = add;
+        main_menu.replaceChild(n, main_menu.lastElementChild);
+        main_menu.appendChild(last_child);
+      });
+
+      let check = false;
+      function allMenu(e) {
+        let menu = document.getElementsByClassName("menu");
+        let menu_options = document.getElementsByClassName("menu_options");
+        let child = e.target.parentNode.childNodes[7];
+        Array.from(menu).forEach((el) => {
+          el.style.color = "white";
+        });
+
+        Array.from(menu_options).forEach((el) => {
+          el.style.visibility = "hidden";
+        });
+
+        if (!check) {
+          e.target.style.color = "green";
+          child.style.visibility = "visible";
+        } else {
+          e.target.style.color = "white";
+          child.style.visibility = "hidden";
+        }
+        check = !check;
+      }
+    </script>
+  </body>
+</html>
